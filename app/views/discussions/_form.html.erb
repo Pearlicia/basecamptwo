@@ -1,0 +1,27 @@
+<%= form_with(model: discussion) do |form| %>
+    <div class="form-control">
+      <div class="field">
+        <%= form.label :discussion, style: "display: block" %>
+        <%= form.text_area :discussion, class: "form-control" %>
+      </div>
+      # <%= form.rich_text_area :body %>
+    </div>
+    
+
+      <div class="field">
+        <%= form.label :discussion, style: "display: block" %>
+        <%= form.text_field :discussion, :required => true, class: "form-control" %>
+      </div>
+
+      <div>
+      <%= form.submit "Create Discussion", class: "btn btn-primary mt-2" %>
+      </div>
+  <% end %>
+
+
+
+
+
+  
+
+  

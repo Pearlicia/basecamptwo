@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @message %>
+
+<p>
+  <strong>Comments:</strong>
+  <%= render @message.usercomments.where(parent_id: nil).includes(:user).order(id: :desc) %>
+  <%= render partial: 'usercomments/form', locals: { message: @message, parent: nil } %> 
+
+</p>
+
+<div>
+  <%= link_to "Edit this discussion", edit_message_path(@message) %> |
+  <%= link_to "Back to discussions", messages_path %>
+
+  <%= button_to "Delete this discussion", @message, method: :delete %>
+</div>

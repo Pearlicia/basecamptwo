@@ -13,7 +13,7 @@ class UsercommentsController < ApplicationController
     def usercomment_params
         params
             .require(:usercomment)
-            .permit(:content)
+            .permit(:content, :parent_id)
             .merge(message_id: params[:message_id])
     end
 end

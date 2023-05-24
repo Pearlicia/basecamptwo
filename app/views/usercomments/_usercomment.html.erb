@@ -1,4 +1,4 @@
-
+<%= stylesheet_link_tag "comment", "data-turbo-track": "reload" %>
 
 <article>
         <p><%= usercomment.content %></p>
@@ -9,8 +9,8 @@
             <%= render partial: 'usercomments/form', locals: {message: usercomment.message, parent: usercomment} %>
         </div>
         <hr />
-        <div class="m-3">
-           <%= render usercomment.usercomments %>
+        <div class="child-comment">
+           <%= render usercomment.usercomments.order(id: :desc) %>
         </div>
 
 </article>

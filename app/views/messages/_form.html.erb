@@ -14,11 +14,12 @@
 
   <div class="field">
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :required => true, class: "form-control" %> 
   </div>
 
-  <div>
-   <%= form.submit nil, :class => 'btn btn-success mt-2'%>
+  <div class="text-center">
+    <%= form.submit nil, :class => 'btn btn-success mt-2'%>
   </div>
 
 <% end %>
+
